@@ -25,7 +25,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 
 The configuration details of each machine may be found below.
-Note: Use the Markdown Table Generator to add/remove values from the table.
 
 
 
@@ -43,8 +42,8 @@ Gateway
 Linux
 
 
-TODO
-
+Elk-VM
+Gateway
 
 
 
@@ -104,44 +103,46 @@ Yes/No
 Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
+*The Ansible Playbook/Script can be used install a variety of different servers within a infrastructure. The primary advantage of Ansible is that it allows IT administrators to automate *********************************************
 TODO: What is the main advantage of automating configuration with Ansible?
 
 The playbook implements the following tasks:
 
-TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
-...
-...
+After running the Ansible playbook, the installation of ELK is firstly constructed by :
 
-The following screenshot displays the result of running docker ps after successfully configuring the ELK instance.
-Note: The following image link needs to be updated. Replace docker_ps_output.png with the name of your screenshot image file.
+1. Installing an application called Docker
+  - Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+ 
+2. Once Docker is installed the Playbook installs Python3-pip
+  - This is a package-management system written in Python which allows a connection to an online repository of public and paid-for private packages to install onto your servers.
+
+3. Because the size of the ELK server is greater than the amount allowed on the Virtual Machine, within the Playbook ensuring that the virtual memory is up to date a command within the playbook is used to ensure that there is enough memory
+
+4. Once everything is up to date, the Virtual machine will test to ensure that everything was installed smoothly.
+
 
 
 Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
-TODO: List the IP addresses of the machines you are monitoring
+104.43.214.193
+103.41.210.192
 
 We have installed the following Beats on these machines:
 
-TODO: Specify which Beats you successfully installed
+Filebeat 
+Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 
-TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., Winlogbeat collects Windows logs, which we use to track user logon events, etc.
+Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 
+Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
 Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
 SSH into the control node and follow the steps below:
 
-Copy the _____ file to _____.
-Update the _____ file to include...
-Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-TODO: Answer the following questions to fill in the blanks:
-
-Which file is the playbook? Where do you copy it?
-Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-_Which URL do you navigate to in order to check that the ELK server is running?
-
-As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+Copy the ansible playbook file to virtual machine.
+Update the ansible.cfg file to include the host domain to where you would like the installion to occur
+Run the playbook, and navigate to ELK server URL which is http://[your.IP]:5601/app/kibana to check that the installation worked as expected.
