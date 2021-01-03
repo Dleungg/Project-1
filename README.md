@@ -127,11 +127,13 @@ Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
 104.43.214.193
+
 103.41.210.192
 
 We have installed the following Beats on these machines:
 
 Filebeat 
+
 Metricbeat
 
 These Beats allow us to collect the following information from each machine:
