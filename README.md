@@ -45,19 +45,21 @@ Linux
 
 Elk-VM
 Gateway
+10.1.0.4
+Linux
+
+
+Web-1
+Gateway
+10.0.0.5
+Linux
 
 
 
-
-TODO
-
-
-
-
-
-TODO
-
-
+Web-2
+Gateway
+10.0.0.6
+Linux
 
 
 
@@ -65,13 +67,14 @@ TODO
 
 Access Policies
 The machines on the internal network are not exposed to the public Internet.
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Elk machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-TODO: Add whitelisted IP addresses
+*103.41.210.192
 
-Machines within the network can only be accessed by _____.
+*99.229.33.167
 
-TODO: Which machine did you allow to access your ELK VM? What was its IP address?
+Machines within the network can only be accessed by IP Address 99.229.33.167.
+
 
 A summary of the access policies in place can be found in the table below.
 
@@ -90,9 +93,9 @@ Yes/No
 
 
 
-
-
-
+ELK VM
+Yes/No
+10.1.0.4
 
 
 
@@ -104,7 +107,7 @@ Yes/No
 Elk Configuration
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-*The Ansible Playbook/Script can be used install a variety of different servers within a infrastructure. The primary advantage of Ansible is that it allows IT administrators to automate *********************************************
+*The Ansible Playbook/Script can be used to install a variety of different servers within a infrastructure. The primary advantage of Ansible is that it allows IT administrators to automate installation of a server by just running an ansible playbook on mulitple Virtual Machines all at once instead of manually configuring eaach virtual machine.
 TODO: What is the main advantage of automating configuration with Ansible?
 
 The playbook implements the following tasks:
