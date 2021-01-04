@@ -1,0 +1,34 @@
+Step 1: Ensure/Double Check Permissions on Sensitive Files
+1.	Permissions on /etc/shadow should allow only root read and write access.
+o	Command to inspect permissions: ls -l /etc/shadow
+o	Command to set permissions (if needed): sudo chmod 600 /etc/shadow
+2.	Permissions on /etc/gshadow should allow only root read and write access.
+o	Command to inspect permissions: ls -l /etc/gshadow
+o	Command to set permissions (if needed): sudo chmod 600 /etc/gshadow
+3.	Permissions on /etc/group should allow root read and write access, and allow everyone else read access only.
+o	Command to inspect permissions: ls -l /etc/group
+o	Command to set permissions (if needed): sudo chmod 644 /etc/group
+4.	Permissions on /etc/passwd should allow root read and write access, and allow everyone else read access only.
+o	Command to inspect permissions: ls -l /etc/passwd
+o	Command to set permissions (if needed): sudo chmod 644 /etc/passwd
+Step 2: Create User Accounts
+1.	Add user accounts for sam, joe, amy, sara, and admin.
+o	Command to add each user account (include all five users): 
+  					    sudo adduser sam
+    sudo adduser joe
+    sudo adduser amy
+    sudo adduser sara
+    sudo adduser admin
+o	
+2.	Ensure that only the admin has general sudo access.
+o	Command to add admin to the sudo group:
+Step 3: Create User Group and Collaborative Folder
+1.	Add an engineers group to the system.
+o	Command to add group: sudo addgroup engineers
+
+2.Add users sam, joe, amy, and sara to the managed group.
+o	Command to add users to engineers group (include all four users):
+Sudo usermod -G sam
+Sudo usermod -G joe
+Sudo usermod -G amy
+Sudo usermod -G sara
